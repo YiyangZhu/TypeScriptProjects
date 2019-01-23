@@ -28,8 +28,10 @@ consumed as if they were all defined in one place. Because there are
 dependencies between files, you will add reference tags to tell
 the compiler about the relationships between the files.
 */
+///<reference path="ZooBirds.ts" />
+///<reference path="ZooWild.ts" />
 namespace Zoo{
-    interface Animal{
+    export interface Animal{
         //We do not need the *export* here since this interface will
         //only be accessible only by entities from within the Zoo namespace
         skinType: string;

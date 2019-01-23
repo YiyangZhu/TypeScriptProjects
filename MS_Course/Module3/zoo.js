@@ -1,3 +1,38 @@
+///<reference path="ZooAnimals.ts" />
+var Zoo;
+(function (Zoo) {
+    var Bird = /** @class */ (function () {
+        function Bird() {
+            this.skinType = "feather";
+        }
+        Bird.prototype.isMammal = function () {
+            return false;
+        };
+        return Bird;
+    }());
+    Zoo.Bird = Bird;
+})(Zoo || (Zoo = {}));
+var parrot = new Zoo.Bird();
+alert(parrot.isMammal());
+var rep = Zoo.Reptile;
+var lizard;
+alert(lizard.skinType);
+///<reference path = "ZooAnimals.ts"/>
+var Zoo;
+(function (Zoo) {
+    var Reptile = /** @class */ (function () {
+        function Reptile() {
+            //note that we need the *export* here to be able to access
+            //this class and instantiate objects of the Reptile type
+            this.skinType = "scales";
+        }
+        Reptile.prototype.isMammal = function () {
+            return false;
+        };
+        return Reptile;
+    }());
+    Zoo.Reptile = Reptile;
+})(Zoo || (Zoo = {}));
 /*Namespaces, namespaces are used as a way to organize the code so that you can
 keep track of your types and not worry about name collisions with other
 objects. Instead of putting lots of different names into the global
@@ -19,35 +54,5 @@ with similar names as entities inside a namespace that is because
 the namespace entities are refered to with their namespace so that
 gives them their uniqueness.
 */
-///<reference path = "ZooAnimals.ts"/>
-var Zoo;
-(function (Zoo) {
-    var Reptile = /** @class */ (function () {
-        function Reptile() {
-            //note that we need the *export* here to be able to access
-            //this class and instantiate objects of the Reptile type
-            this.skinType = "scales";
-        }
-        Reptile.prototype.isMammal = function () {
-            return false;
-        };
-        return Reptile;
-    }());
-    Zoo.Reptile = Reptile;
-})(Zoo || (Zoo = {}));
-///<reference path="ZooAnimals.ts" />
-var Zoo;
-(function (Zoo) {
-    var Bird = /** @class */ (function () {
-        function Bird() {
-            this.skinType = "feather";
-        }
-        Bird.prototype.isMammal = function () {
-            return false;
-        };
-        return Bird;
-    }());
-    Zoo.Bird = Bird;
-})(Zoo || (Zoo = {}));
-var parrot = new Zoo.Bird();
-alert(parrot.isMammal());
+///<reference path="ZooBirds.ts" />
+///<reference path="ZooWild.ts" />
