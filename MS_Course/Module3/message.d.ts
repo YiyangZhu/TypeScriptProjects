@@ -1,2 +1,1 @@
-declare function showMessage(message: string);
-
+export declare function showMessage(message: string);

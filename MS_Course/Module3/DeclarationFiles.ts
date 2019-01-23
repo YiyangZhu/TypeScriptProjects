@@ -31,6 +31,7 @@ in a definition file as message.d.ts:
 after creating the message.d.ts, we can use the function showMessage in TypeScript
 without compile errors.
 */
+import {showMessage} from "./message";
 showMessage("this is a message."); //Error: cannot find name 'showMessage'
 
 /*
