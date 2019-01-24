@@ -1,2 +1,2 @@
-declare module "hot-new-module";
+import * as mymodule from "mymodule";//Error,cannot find module "mymodule"
 
