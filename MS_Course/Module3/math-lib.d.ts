@@ -1,3 +1,5 @@
-export const isPrime(x:number): boolean;
+//example from official guide
+export function isPrime(x: number): boolean;
 export as namespace mathLib;
+
 
