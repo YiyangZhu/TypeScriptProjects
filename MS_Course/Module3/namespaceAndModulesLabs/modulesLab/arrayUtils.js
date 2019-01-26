@@ -1,19 +1,20 @@
-var ArrayUtilities;
-(function (ArrayUtilities) {
-    function reverseArray(array) {
+"use strict";
+exports.__esModule = true;
+var ArrayUtilities = /** @class */ (function () {
+    function ArrayUtilities() {
+    }
+    ArrayUtilities.prototype.reverseArray = function (array) {
         return array.slice(0).reverse();
-    }
-    ArrayUtilities.reverseArray = reverseArray;
-    function lastItemOfArray(array) {
+    };
+    ArrayUtilities.prototype.lastItemOfArray = function (array) {
         return array.slice(0).pop();
-    }
-    ArrayUtilities.lastItemOfArray = lastItemOfArray;
-    function firstItemOfArray(array) {
+    };
+    ArrayUtilities.prototype.firstItemOfArray = function (array) {
         return array.slice(0).shift();
-    }
-    ArrayUtilities.firstItemOfArray = firstItemOfArray;
-    function concatenateArray(array1, array2) {
+    };
+    ArrayUtilities.prototype.concatenateArray = function (array1, array2) {
         return array1.concat(array2);
-    }
-    ArrayUtilities.concatenateArray = concatenateArray;
-})(ArrayUtilities || (ArrayUtilities = {}));
+    };
+    return ArrayUtilities;
+}());
+exports["default"] = new ArrayUtilities;
