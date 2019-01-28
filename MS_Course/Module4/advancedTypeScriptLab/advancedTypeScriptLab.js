@@ -39,16 +39,16 @@ function standardizeElements(elemArray) {
     return elemArray;
 }
 var standardElements = standardizeElements(elementArray);
-var Rotator = /** @class */ (function () {
-    function Rotator() {
+var Rotater = /** @class */ (function () {
+    function Rotater() {
     }
-    Rotator.prototype.rotate = function (elem) {
+    Rotater.prototype.rotate = function (elem) {
         elem.style.transform = "rotate(-315deg)";
     };
-    Rotator.prototype.rotateBack = function (elem) {
+    Rotater.prototype.rotateBack = function (elem) {
         elem.style.transform = "";
     };
-    return Rotator;
+    return Rotater;
 }());
 var Mover = /** @class */ (function () {
     function Mover() {
@@ -70,6 +70,9 @@ var movingElement = /** @class */ (function () {
         elem.onmouseup = function () {
             _this.moveBack(elem);
         };
+        elem.onmouseover = function () {
+            _this.rotate(elem);
+        };
         elem.onmouseout = function () {
             _this.rotateBack(elem);
         };
@@ -84,7 +87,7 @@ function applyMixins(derivedClass, baseClasses) {
         });
     });
 }
-applyMixins(movingElement, [Mover, Rotator]);
+applyMixins(movingElement, [Mover, Rotater]);
 for (var _i = 0, standardElements_1 = standardElements; _i < standardElements_1.length; _i++) {
     var elem = standardElements_1[_i];
     elem.style.width = "60px";

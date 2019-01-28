@@ -43,7 +43,7 @@ function standardizeElements(elemArray: Array<any>) : Array<HTMLElement>{
 
 let standardElements = standardizeElements(elementArray);
 
-class Rotator{
+class Rotater{
     rotate(elem: HTMLElement){
         elem.style.transform = "rotate(-315deg)"
     }
@@ -61,18 +61,21 @@ class Mover {
     }
 }
 
-class movingElement implements Rotator, Mover{
+class movingElement implements Rotater, Mover {
     rotate: (elem: HTMLElement) => any
     move: (elem: HTMLElement) => any
     moveBack: (elem: HTMLElement) => any
     rotateBack: (elem: HTMLElement) => any
     element: HTMLElement
-    constructor(elem: HTMLElement){
+    constructor(elem: HTMLElement) {
         elem.onmousedown = () => {
             this.move(elem);
         }
         elem.onmouseup = () => {
             this.moveBack(elem);
+        }
+        elem.onmouseover = () => {
+            this.rotate(elem);
         }
         elem.onmouseout = () => {
             this.rotateBack(elem);
@@ -81,17 +84,17 @@ class movingElement implements Rotator, Mover{
     }
 }
 
-function applyMixins(derivedClass: any, baseClasses: any[]){
+function applyMixins(derivedClass: any, baseClasses: any[]) {
     baseClasses.forEach(baseClass => {
-        Object.getOwnPropertyNames(baseClass.prototype).forEach(name =>{
+        Object.getOwnPropertyNames(baseClass.prototype).forEach(name => {
             derivedClass.prototype[name] = baseClass.prototype[name];
         });
     });
 }
 
-applyMixins(movingElement,[Mover,Rotator])
+applyMixins(movingElement, [Mover, Rotater])
 
-for(let elem of standardElements){
+for (let elem of standardElements) {
     elem.style.width = "60px"
     elem.style.height = "60px"
     elem.style.backgroundColor = "green";
