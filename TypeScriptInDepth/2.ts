@@ -3,12 +3,12 @@
 
 //structural equality
 
-console.log({a:123} == {a:123});
-console.log({a:123} === {a:123});
+console.log({a:123} == {a:123}); //false
+console.log({a:123} === {a:123}); //false
 
 import * as deepEqual from "deep-equal";
 
-console.log(deepEqual({a:123},{a:123}));
+console.log(deepEqual({a:123},{a:123})); //true
 
 var foo = {};
 var bar = foo;
