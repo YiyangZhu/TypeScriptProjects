@@ -21,3 +21,6 @@ var foo = new FooBase();
 foo.x;//okay
 foo.y;//Error: property y is private and only accessible within class "FooBase" 
 foo.z;//Error: property z is protected and only accessible within class "FooBase" and its subclasses
+
+
+
